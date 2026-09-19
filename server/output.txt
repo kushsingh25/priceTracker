@@ -1,0 +1,29 @@
+
+> ine-price-tracker-server@1.0.0 test:scrape
+> node scraper/testScrape.js 822
+
+{
+  storeProductId: '822',
+  status: 'failed',
+  attempts: 1,
+  price: null,
+  stock: null,
+  error: 'locator.click: Timeout 30000ms exceeded.\n' +
+    'Call log:\n' +
+    `\x1B[2m  - waiting for locator('button:has-text("Reveal Price")').first()\x1B[22m\n` +
+    '\x1B[2m    - locator resolved to <button disabled type="button" class="btn btn-primary" aria-label="Reveal price">Reveal price</button>\x1B[22m\n' +
+    '\x1B[2m  - attempting click action\x1B[22m\n' +
+    '\x1B[2m    2 × waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m      - element is not enabled\x1B[22m\n' +
+    '\x1B[2m    - retrying click action\x1B[22m\n' +
+    '\x1B[2m    - waiting 20ms\x1B[22m\n' +
+    '\x1B[2m    2 × waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m      - element is not enabled\x1B[22m\n' +
+    '\x1B[2m    - retrying click action\x1B[22m\n' +
+    '\x1B[2m      - waiting 100ms\x1B[22m\n' +
+    '\x1B[2m    58 × waiting for element to be visible, enabled and stable\x1B[22m\n' +
+    '\x1B[2m       - element is not enabled\x1B[22m\n' +
+    '\x1B[2m     - retrying click action\x1B[22m\n' +
+    '\x1B[2m       - waiting 500ms\x1B[22m\n',
+  durationMs: 32269
+}
