@@ -34,9 +34,18 @@ async function fetchAllProducts() {
     items = items.concat(data.items);
   }
 
-  cache = items;
+  const seen = new Set();
+  const deduped = [];
+  for (const item of items) {
+    if (!seen.has(item.id)) {
+      seen.add(item.id);
+      deduped.push(item);
+    }
+  }
+
+  cache = deduped;
   cachedAt = Date.now();
-  return items;
+  return deduped;
 }
 
 async function searchProducts(query) {
