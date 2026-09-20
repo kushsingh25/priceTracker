@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node index.js",
     "test:catalog": "node scraper/testCatalog.js",
-    "test:scrape": "node scraper/testScrape.js"
+    "test:scrape": "node scraper/testScrape.js",
+    "headed": "node scraper/headedRun.js"
   },
   "dependencies": {
     "axios": "^1.7.7",

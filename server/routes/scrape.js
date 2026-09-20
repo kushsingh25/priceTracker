@@ -32,7 +32,7 @@ router.post('/run', async (req, res) => {
   const results = [];
 
   for (const product of products) {
-    const result = await scrapeProduct(browser, product.store_product_id, { verbose: false });
+    const result = await scrapeProduct(browser, product.store_product_id, { verbose: true });
 
     await supabase.from('scrape_log').insert({
       product_id: product.id,
@@ -68,7 +68,6 @@ router.post('/run', async (req, res) => {
     scraped: results.length,
     succeeded: results.filter((r) => r.status !== 'failed').length,
     failed: results.filter((r) => r.status === 'failed').length,
-    results,
   });
 });
 
