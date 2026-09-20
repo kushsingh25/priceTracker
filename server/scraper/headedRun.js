@@ -6,7 +6,11 @@ const productIds = process.argv.slice(2).length
   : ['822', '85', '37', '723', '856'];
 
 (async () => {
-  const browser = await chromium.launch({ headless: false, slowMo: 200 });
+  const browser = await chromium.launch({
+    headless: false,
+    slowMo: 200,
+    args: ['--window-position=0,0', '--window-size=800,800'],
+  });
 
   for (const id of productIds) {
     console.log(`\n=== scraping product ${id} ===`);
